@@ -19,6 +19,17 @@ public class Account { //just need an account number between 100000 and 999999, 
    public double getBalance() { //accessor for balance
       return this.balance;
    }
+   public void deposit(double d) {
+      this.balance += d;
+   }
+   public void withdraw(double w) {
+      if ((this.balance - w) < 0) {
+         this.balance = 0;
+      }
+      else {
+         this.balance -= w;
+      }
+   }
    public String toString() {//toString meant to be overridden by checking and savings accounts
       return "******** account: " + this.accountNumber + ", balance: $" + this.balance;
    }
